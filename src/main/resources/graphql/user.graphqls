@@ -1,0 +1,15 @@
+extend type Query {
+	findAllUser: [User]
+}
+
+type User {
+	id: Int,
+	username: String,
+	password: String,
+	role: Role
+}
+
+enum Role {
+	ADMIN,
+	USER
+}

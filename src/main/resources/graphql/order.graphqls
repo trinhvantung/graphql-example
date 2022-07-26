@@ -1,0 +1,24 @@
+extend type Query {
+	findAllOrderByUser(userId: Int!): [Order]
+	findAllOrder: [Order]
+}
+
+extend type Mutation {
+	createOrder(totalPrice: Int, phoneNumber: String, address: String): Order
+	createOrder(order: OrderInput): Order
+}
+
+type Order {
+	id: Int,
+	address: String,
+	phoneNumber: String,
+	totalPrice: Int,
+	user: User
+}
+
+input OrderInput {
+	id: Int,
+	address: String,
+	phoneNumber: String,
+	totalPrice: Int
+}
